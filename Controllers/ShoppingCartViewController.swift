@@ -8,6 +8,11 @@
 
 import UIKit
 
+protocol ShoppingCartDelegate {
+    func shouldSendItems()
+}
+
+
 class ShoppingCartViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -15,6 +20,9 @@ class ShoppingCartViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    //MARK: - Properties
+    var delegate: ShoppingCartDelegate?
     
     //MARK: - IBOutlets
     @IBOutlet var numberOfItemsInCart: UILabel!

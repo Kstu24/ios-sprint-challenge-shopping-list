@@ -10,7 +10,9 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
-class ShoppingListCollectionViewController: UICollectionViewController {
+class ShoppingListCollectionViewController: UICollectionViewController, ShoppingCartDelegate {
+
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,11 +25,18 @@ class ShoppingListCollectionViewController: UICollectionViewController {
 
         // Do any additional setup after loading the view.
     }
+    //MARK: - Properties
+    let shoppingItemController = ShoppingItemController()
+    
     
     //MARK: - IBOutlets
 
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var foodNameLabel: UILabel!
+    
+    //MARK: - Functions
+    func shouldSendItems() {
+    }
     
     /*
      // MARK: - Navigation
@@ -40,25 +49,32 @@ class ShoppingListCollectionViewController: UICollectionViewController {
     */
 
     // MARK: UICollectionViewDataSource
-
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
+//
+//    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+//        // #warning Incomplete implementation, return the number of sections
+//        return 0
+//    }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 0
+        return shoppingItemController.shoppingItem.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "shoppingItemCell", for: indexPath) as? ShoppingItemCollectionViewCell else { return UICollectionViewCell()}
+        
+        let shoppingItem = shoppingItemController.shoppingItem[indexPath.item]
+        
+        cell.imageView.image = shoppingItem.image
+        cell.foodNameLabel.text = shoppingItem.name
     
         // Configure the cell
     
         return cell
     }
+    
+
 
     // MARK: UICollectionViewDelegate
 
