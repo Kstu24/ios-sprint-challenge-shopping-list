@@ -31,11 +31,13 @@ class ShoppingCartViewController: UIViewController {
     @IBOutlet var userAddressTextField: UITextField!
     
     //MARK: - IBActions
-    @IBAction func userNameTextField(_ sender: UITextField) {
-    }
-    @IBAction func userAddressTextField(_ sender: UITextField) {
-    }
     @IBAction func sendOrderButtonTapped(_ sender: UIButton) {
+       guard let name = userNameTextField.text,
+         let address = userAddressTextField.text,
+        !name.isEmpty,
+        !address.isEmpty else { return }
+        
+        
     }
     
     
