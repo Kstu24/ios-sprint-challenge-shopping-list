@@ -39,6 +39,9 @@
                                                     <state key="normal" title="Not Added">
                                                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="notAddedButtonTapped:" destination="DfW-bG-kUV" eventType="touchUpInside" id="4cA-gF-qlj"/>
+                                                    </connections>
                                                 </button>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MKY-7d-rox">
                                                     <rect key="frame" x="0.0" y="35" width="160" height="114.5"/>
@@ -64,6 +67,7 @@
                                     <outlet property="foodNameLabel" destination="wWy-Be-Jt4" id="nZH-3Z-5Pz"/>
                                     <outlet property="imageView" destination="MKY-7d-rox" id="8eJ-oX-f1M"/>
                                     <outlet property="notAddedButton" destination="IQf-fS-hIH" id="BIF-18-2o7"/>
+                                    <outlet property="notAddedButtonTapped" destination="IQf-fS-hIH" id="bzh-9G-qro"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -111,17 +115,11 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="376.5" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
-                                                <connections>
-                                                    <action selector="userNameTextField:" destination="rC1-pe-JiP" eventType="editingDidEnd" id="KNh-b6-pmg"/>
-                                                </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9ox-pv-Vl6">
                                                 <rect key="frame" x="0.0" y="82" width="376.5" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
-                                                <connections>
-                                                    <action selector="userAddressTextField:" destination="rC1-pe-JiP" eventType="editingDidEnd" id="DGA-CA-26c"/>
-                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>

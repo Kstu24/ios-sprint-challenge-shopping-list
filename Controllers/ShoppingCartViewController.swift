@@ -40,6 +40,14 @@ class ShoppingCartViewController: UIViewController {
         
     }
     
+    private func showAlert() {
+        let alert = UIAlertController(title: "Thanks for your order \(String(describing: userNameTextField))!", message: "Your order will be sent to \(String(describing: userAddressTextField)) in fifteen minutes.", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     
 
     /*

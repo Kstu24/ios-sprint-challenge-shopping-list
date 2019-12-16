@@ -58,13 +58,13 @@ class ShoppingListCollectionViewController: UICollectionViewController, Shopping
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return shoppingItemController.shoppingItem.count
+        return shoppingItemController.shoppingItems.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "shoppingItemCell", for: indexPath) as? ShoppingItemCollectionViewCell else { return UICollectionViewCell()}
         
-        let shoppingItem = shoppingItemController.shoppingItem[indexPath.item]
+        let shoppingItem = shoppingItemController.shoppingItems[indexPath.item]
         
         cell.imageView.image = shoppingItem.image
         cell.foodNameLabel.text = shoppingItem.name

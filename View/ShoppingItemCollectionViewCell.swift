@@ -8,7 +8,16 @@
 
 import UIKit
 
+
+
 class ShoppingItemCollectionViewCell: UICollectionViewCell {
+    
+    //MARK: - Properties
+    var shoppingItem: ShoppingItem? {
+        didSet {
+            self.updateViews()
+        }
+    }
     
     //MARK: - IBOutlets
 
@@ -16,9 +25,16 @@ class ShoppingItemCollectionViewCell: UICollectionViewCell {
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var foodNameLabel: UILabel!
     
+    //MARK: - Actions
+
+    @IBAction func notAddedButtonTapped(_ sender: UIButton) {
+        
+    }
+    
+    
     //MARK: - Functions
     
     func updateViews() {
-        
+        guard let shoppingItem = shoppingItem else { return }
     }
 }
