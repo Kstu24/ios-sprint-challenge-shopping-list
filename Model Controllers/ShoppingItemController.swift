@@ -9,20 +9,60 @@
 import Foundation
 
 class ShoppingItemController {
-    var shoppingItem: [ShoppingItem] {
-        
-        let result = [
-        ShoppingItem(name: "Apple", imageName: "apple", isAdded: false),
-        ShoppingItem(name: "Grapes", imageName: "grapes", isAdded: false),
-        ShoppingItem(name: "Milk", imageName: "milk", isAdded: false),
-        ShoppingItem(name: "Muffin", imageName: "muffin", isAdded: false),
-        ShoppingItem(name: "Popcorn", imageName: "popcorn", isAdded: false),
-        ShoppingItem(name: "Soda", imageName: "soda", isAdded: false),
-        ShoppingItem(name: "Strawberries", imageName: "strawberries", isAdded: false)
-        ]
+    let itemNames = ["Apple", "Grapes", "Milk", "Muffin", "Popcorn", "Soda", "Strawberries"]
+    var shoppingItems: [ShoppingItem] = []
     
-        return result
+    init() {
+        createItems()
+        loadFromPersistenStore()
+    
     }
     
+    private var persistentFileURL: URL? {
+        let fileManger = FileManager.default
+        guard let documents = fileManger.urls(for: .documentDirectory, in: .userDomainMask).first else { return nil }
+        
+    
+        return documents.appendingPathComponent("shoppingItems.list")
+    }
+    
+    //MARK: - Functions
+    
+    func createItems() {
+        for itemName in itemNames {
+            let shoppingItem = ShoppingItem(name: itemName, imageName: itemName.lowercased(), isAdded: false)
+            shoppingItems.append(shoppingItem)
+            
+        }
+        saveToPersistentStore()
+    }
+    
+    
+    func saveToPersistentStore() {
+        guard let url = persistentFileURL else { return }
+        
+        
+        do {
+            let encoder = PropertyListEncoder()
+            let data = try encoder.encode(shoppingItems)
+            try data.write(to: url)
+            
+        } catch {
+            print("Error saving shopping item data: \(error)")
+        }
+    }
+     func loadFromPersistenStore() {
+         let fileManager = FileManager.default
+         guard let url = persistentFileURL,
+             fileManager.fileExists(atPath: url.path) else { return }
+
+         do {
+             let data = try Data(contentsOf: url)
+             let decoder = PropertyListDecoder()
+            shoppingItems = try decoder.decode([ShoppingItem].self, from: data)
+         } catch {
+             print("Error saving shopping item data: \(error)")
+         }
+     }
     
 }

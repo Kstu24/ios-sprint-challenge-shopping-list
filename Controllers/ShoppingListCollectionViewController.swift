@@ -74,6 +74,14 @@ class ShoppingListCollectionViewController: UICollectionViewController, Shopping
         return cell
     }
     
+       override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "shoppingCartSegue" {
+           guard let shoppingCartVC = segue.destination as? ShoppingCartViewController else { return }
+               shoppingCartVC.delegate = self
+           }
+        }
+    }
+    
 
 
     // MARK: UICollectionViewDelegate
@@ -107,4 +115,4 @@ class ShoppingListCollectionViewController: UICollectionViewController, Shopping
     }
     */
 
-}
+

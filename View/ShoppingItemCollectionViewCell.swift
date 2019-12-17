@@ -28,13 +28,23 @@ class ShoppingItemCollectionViewCell: UICollectionViewCell {
     //MARK: - Actions
 
     @IBAction func notAddedButtonTapped(_ sender: UIButton) {
-        
+        if shoppingItem != nil {
+            shoppingItem?.isAdded.toggle()
+            if shoppingItem?.isAdded == false {
+                notAddedButton.setTitle("Not Added", for: .normal)
+            } else {
+                notAddedButton.setTitle("Added", for: .normal)
+            }
+        }
+        updateViews()
     }
     
     
     //MARK: - Functions
     
     func updateViews() {
-        guard let shoppingItem = shoppingItem else { return }
+        guard shoppingItem != nil else { return }
+        
+        
     }
 }
