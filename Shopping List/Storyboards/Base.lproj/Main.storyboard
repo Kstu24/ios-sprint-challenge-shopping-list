@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0eO-Eb-W2C">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0eO-Eb-W2C">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -32,10 +32,10 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="4Zq-nm-Fi4">
-                                            <rect key="frame" x="0.0" y="14" width="160" height="175"/>
+                                            <rect key="frame" x="0.0" y="5" width="160" height="193"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IQf-fS-hIH">
-                                                    <rect key="frame" x="43" y="0.0" width="74" height="30"/>
+                                                    <rect key="frame" x="43" y="0.0" width="74" height="48"/>
                                                     <state key="normal" title="Not Added">
                                                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     </state>
@@ -44,10 +44,10 @@
                                                     </connections>
                                                 </button>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MKY-7d-rox">
-                                                    <rect key="frame" x="0.0" y="35" width="160" height="114.5"/>
+                                                    <rect key="frame" x="0.0" y="53" width="160" height="114.5"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wWy-Be-Jt4">
-                                                    <rect key="frame" x="37.5" y="154.5" width="85" height="20.5"/>
+                                                    <rect key="frame" x="37.5" y="172.5" width="85" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -56,7 +56,7 @@
                                         </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="4Zq-nm-Fi4" firstAttribute="top" secondItem="HMt-A0-B1K" secondAttribute="top" constant="14" id="Wg5-8C-cTE"/>
+                                        <constraint firstItem="4Zq-nm-Fi4" firstAttribute="top" secondItem="HMt-A0-B1K" secondAttribute="top" constant="5" id="Wg5-8C-cTE"/>
                                         <constraint firstItem="4Zq-nm-Fi4" firstAttribute="centerX" secondItem="HMt-A0-B1K" secondAttribute="centerX" id="a8o-iZ-lhJ"/>
                                         <constraint firstItem="4Zq-nm-Fi4" firstAttribute="centerY" secondItem="HMt-A0-B1K" secondAttribute="centerY" id="jk8-jg-ldZ"/>
                                         <constraint firstItem="4Zq-nm-Fi4" firstAttribute="leading" secondItem="HMt-A0-B1K" secondAttribute="leading" id="n7F-uZ-hpp"/>
@@ -67,7 +67,6 @@
                                     <outlet property="foodNameLabel" destination="wWy-Be-Jt4" id="nZH-3Z-5Pz"/>
                                     <outlet property="imageView" destination="MKY-7d-rox" id="8eJ-oX-f1M"/>
                                     <outlet property="notAddedButton" destination="IQf-fS-hIH" id="BIF-18-2o7"/>
-                                    <outlet property="notAddedButtonTapped" destination="IQf-fS-hIH" id="bzh-9G-qro"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -147,6 +146,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Blj-1g-BR4"/>
                     <connections>
+                        <outlet property="amountOfItemsInCart" destination="HgT-N8-9fo" id="9dS-lt-AEy"/>
                         <outlet property="numberOfItemsInCart" destination="HgT-N8-9fo" id="UFp-wc-ccu"/>
                         <outlet property="sendOrderButton" destination="RR4-ut-qdc" id="aJJ-SZ-rhC"/>
                         <outlet property="userAddressTextField" destination="9ox-pv-Vl6" id="gzX-oo-5dn"/>

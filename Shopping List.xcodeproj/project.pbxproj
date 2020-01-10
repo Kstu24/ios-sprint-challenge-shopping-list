@@ -43,6 +43,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		114088CD23C58A3900357085 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				4613E91521143BFC00E7FF73 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		114088CE23C5917000357085 /* Shopping List */ = {
+			isa = PBXGroup;
+			children = (
+				4613E91D21143BFD00E7FF73 /* Info.plist */,
+				4613E91021143BFC00E7FF73 /* Resources */,
+				114088CD23C58A3900357085 /* Storyboards */,
+				11AAE6B623A48336008A8AD3 /* Models */,
+				11AAE6BC23A486CD008A8AD3 /* Model Controllers */,
+				11AAE6B923A485E5008A8AD3 /* View */,
+				11AAE6B123A47EA9008A8AD3 /* Controllers */,
+			);
+			path = "Shopping List";
+			sourceTree = "<group>";
+		};
 		11AAE6B123A47EA9008A8AD3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -79,11 +101,7 @@
 		4613E90521143BFC00E7FF73 = {
 			isa = PBXGroup;
 			children = (
-				11AAE6BC23A486CD008A8AD3 /* Model Controllers */,
-				11AAE6B923A485E5008A8AD3 /* View */,
-				11AAE6B623A48336008A8AD3 /* Models */,
-				11AAE6B123A47EA9008A8AD3 /* Controllers */,
-				4613E91021143BFC00E7FF73 /* Shopping List */,
+				114088CE23C5917000357085 /* Shopping List */,
 				4613E90F21143BFC00E7FF73 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -96,16 +114,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		4613E91021143BFC00E7FF73 /* Shopping List */ = {
+		4613E91021143BFC00E7FF73 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				4613E91121143BFC00E7FF73 /* AppDelegate.swift */,
-				4613E91521143BFC00E7FF73 /* Main.storyboard */,
 				4613E91821143BFD00E7FF73 /* Assets.xcassets */,
 				4613E91A21143BFD00E7FF73 /* LaunchScreen.storyboard */,
-				4613E91D21143BFD00E7FF73 /* Info.plist */,
 			);
-			path = "Shopping List";
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +156,7 @@
 				TargetAttributes = {
 					4613E90D21143BFC00E7FF73 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1120;
 					};
 				};
 			};
@@ -337,7 +354,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.LambdaSchool.Shopping-List";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -355,7 +372,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.LambdaSchool.Shopping-List";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

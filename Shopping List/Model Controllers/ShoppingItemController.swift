@@ -15,7 +15,6 @@ class ShoppingItemController {
     init() {
         createItems()
         loadFromPersistenStore()
-    
     }
     
     private var persistentFileURL: URL? {
@@ -65,4 +64,16 @@ class ShoppingItemController {
          }
      }
     
+}
+
+extension ShoppingItemController: ItemCellProtocol {
+
+    
+    func buttonTapped(_ shoppingItem: ShoppingItem) {
+        
+        shoppingItems.append(shoppingItem)
+        
+        
+        
+    }
 }
